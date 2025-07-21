@@ -58,47 +58,49 @@ const Login = () => {
         className="login-website-landing"
       />
       <p className="mobile-login-heading">Login</p>
-      <form className="form-container" onSubmit={submitFormSuccess}>
-        <div className="login-website-logo-heading-container">
-          <img
-            src="https://res.cloudinary.com/tastykitchen/image/upload/v1633365815/Frame_274logo_kbotq3.png"
-            alt="website logo"
-            className="login-website-logo"
-          />
-          <h1 className="login-website-heading">Tasty Kitchens</h1>
-          <h1 className="login-website-login-heading">Login</h1>
-        </div>
-        <div className="input-label-container">
-          <label htmlFor="username" className="label">
-            USERNAME
-          </label>
-          <input
-            type="text"
-            id="username"
-            placeholder="Username"
-            value={username}
-            className="input"
-            onChange={onChangeUserName}
-          />
-        </div>
-        <div className="password-label-container">
-          <label htmlFor="password" className="label">
-            PASSWORD
-          </label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Password"
-            className="input"
-            value={password}
-            onChange={onChangePassword}
-          />
-        </div>
-        {showErrorMsg && <p className="error-message">{errorMsg}</p>}
-        <button type="submit" className="login-button">
-          Login
-        </button>
-      </form>
+      <div className='login-container'>
+        <form className="form-container" onSubmit={submitFormSuccess}>
+          <div className="login-website-logo-heading-container">
+            <img
+              src="https://res.cloudinary.com/tastykitchen/image/upload/v1633365815/Frame_274logo_kbotq3.png"
+              alt="website logo"
+              className="login-website-logo"
+            />
+            <h1 className="login-website-heading">Tasty Kitchens</h1>
+            <h1 className="login-website-login-heading">Login</h1>
+          </div>
+          <div className="input-label-container">
+            <label htmlFor="username" className="label">
+              USERNAME
+            </label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Username"
+              value={username}
+              className="input"
+              onChange={onChangeUserName}
+            />
+          </div>
+          <div className="password-label-container">
+            <label htmlFor="password" className="label">
+              PASSWORD
+            </label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              className="input"
+              value={password}
+              onChange={onChangePassword}
+            />
+          </div>
+          {showErrorMsg && <p className="error-message">{errorMsg}</p>}
+          <button type="submit" className="login-button">
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   )
 }

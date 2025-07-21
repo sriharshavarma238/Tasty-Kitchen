@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom' // Added
+import { useParams } from 'react-router-dom'
 import { FaStar, FaRupeeSign } from 'react-icons/fa'
 import Cookies from 'js-cookie'
 import { ClipLoader } from "react-spinners"
@@ -13,12 +13,12 @@ const getCartListFromLocalStorage = () => {
   return stringCartList ? JSON.parse(stringCartList) : []
 }
 
-const RestaurantDetails = () => { // Removed `match` prop
+const RestaurantDetails = () => {
   const [restaurantData, setRestaurantData] = useState({})
   const [foodItemList, setFoodItemList] = useState([])
   const [cartList, setCartList] = useState(getCartListFromLocalStorage())
   const [isLoading, setIsLoading] = useState(true)
-  const { id } = useParams() // Added
+  const { id } = useParams()
 
   useEffect(() => {
     const getRestaurantDetails = async () => {
@@ -27,7 +27,7 @@ const RestaurantDetails = () => { // Removed `match` prop
       
       try {
         const response = await fetch(
-          `https://apis.ccbp.in/restaurants-list/${id}`, // Use `id` from useParams
+          `https://apis.ccbp.in/restaurants-list/${id}`,
           {
             headers: { Authorization: `Bearer ${jwtToken}` },
           }
@@ -68,7 +68,7 @@ const RestaurantDetails = () => { // Removed `match` prop
     }
 
     getRestaurantDetails()
-  }, [id]) // Updated dependency
+  }, [id]) 
 
   useEffect(() => {
     localStorage.setItem('cartData', JSON.stringify(cartList))

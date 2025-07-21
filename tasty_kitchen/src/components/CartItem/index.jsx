@@ -1,4 +1,4 @@
-                                                        import React from 'react'
+import React from 'react'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import { FaRupeeSign } from 'react-icons/fa'
 import Counter from '../Counter'
@@ -24,9 +24,12 @@ const CartItem = (props) => {
 
   return (
     <li className='cart-item'>
-      <img src={imageUrl} alt={name} className='cart-item-image' />
+
       <div className='cart-item-details-container'>
-        <h1 className='cart-item-title'>{name}</h1>
+        <div style={{display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap'}}>
+          <img src={imageUrl} alt={name} className='cart-item-image' />
+          <h1 className='cart-item-title'>{name}</h1>
+        </div>
         <Counter
           quantity={quantity}
           onDecrement={onDecrement}

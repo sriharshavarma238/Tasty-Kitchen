@@ -1,40 +1,26 @@
 .cart-item {
   display: flex;
   align-items: center;
-  padding-left: 0px;
   margin-left: 0px;
   width: 100%;
   margin-top: 24px;
   padding-left: 20px;
 }
+
 .cart-item-image {
   width: 136px;
   height: 110px;
   border-radius: 8px;
   flex-shrink: 0;
 }
-@media screen and (min-width: 768px) {
-  .cart-item-image {
-    width: 106px;
-    height: 70px;
-    margin-left: 30px;
-  }
-}
+
 .cart-item-details-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: 16px;
 }
-@media screen and (min-width: 768px) {
-  .cart-item-details-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-  }
-}
+
 .cart-item-title {
   font-family: DM Sans;
   font-style: normal;
@@ -46,14 +32,7 @@
   margin-bottom: 8px;
   width: 190px;
 }
-@media screen and (min-width: 768px) {
-  .cart-item-title {
-    font-size: 20px;
-    line-height: 24px;
-    margin-bottom: 0px;
-    margin-bottom: 8px;
-  }
-}
+
 .cart-total-price {
   font-family: DM Sans;
   font-style: normal;
@@ -64,23 +43,7 @@
   margin-bottom: 8px;
   width: 290px;
 }
-@media screen and (min-width: 768px) {
-  .remove-button {
-    display: none;
-  }
-  .delete-icon {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-  
-}
-@media screen and (max-width: 768px) {
-  .delete-icon {
-    display: none;
-  }
-}
+
 .remove-button {
   background-color: transparent;
   color: #334155;
@@ -92,4 +55,102 @@
   cursor: pointer;
   text-align: left;
   color: red;
+}
+
+/* Remove button on desktop */
+@media screen and (min-width: 768px) {
+  .cart-item {
+    display: flex;
+    width: 100%;
+    margin-top: 24px;
+    padding-left: 0px;
+    align-items: stretch;
+    background: none;
+  }
+  .cart-item-details-container {
+    display: grid;
+    grid-template-columns: minmax(100px, 1.7fr) minmax(60px, 0.7fr) minmax(60px, 1fr) minmax(30px, 0.7fr);
+    gap: 2em;
+    align-items: center;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+  .cart-item-details-container > div {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 16px !important;
+    min-width: 0;
+  }
+  .cart-item-image {
+    width: 80px;
+    height: 65px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin: 0;
+    flex-shrink: 0;
+    display: block;
+  }
+  .cart-item-title {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #183b56;
+    max-width: 180px;
+    word-break: break-word;
+    margin: 0;
+    padding: 0;
+    white-space: normal;
+    flex-shrink: 1;
+  }
+  .cart-item-details-container > .Counter,
+  .cart-item-details-container > div > .Counter {
+    justify-self: center;
+    align-self: center;
+  }
+  .cart-total-price {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 24px;
+    color: #ffa412;
+    margin: 0;
+    max-width: 100px;
+    word-break: break-word;
+    white-space: nowrap;
+    text-align: left;
+    align-self: center;
+    justify-self: center;
+  }
+  .delete-icon {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .remove-button {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cart-item-image {
+    width: 106px;
+    height: 70px;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .delete-icon {
+    display: none;
+  }
 }
