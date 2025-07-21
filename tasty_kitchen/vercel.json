@@ -1,4 +1,5 @@
 {
+  "rootDirectory": "tasty_kitchen",
   "buildCommand": "npm install && npm run build",
   "outputDirectory": "dist"
 }
